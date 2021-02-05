@@ -10,6 +10,8 @@ def minion_game(string):
     
     if con>vow:
         print('Stuart {}'.format(con))
+    elif con==vow:
+        print('Draw')
     else:
         print('Kevin {}'.format(vow))
 if __name__ == '__main__':
