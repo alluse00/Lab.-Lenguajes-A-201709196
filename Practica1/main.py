@@ -143,7 +143,7 @@ def HTML():
     start = """<html>
     <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-primary">
       <a class="navbar-brand">
         <img src="Ingusac.png" width="100" height="100">
       </a>
@@ -161,7 +161,7 @@ def HTML():
     \n"""
     lol.write(datos)
     lol.write("""
-    <div class="container" style="text-align: center;"><h4 > <b> LISTAS HECHAS </b> <h4></div>
+    <div class="container" style="text-align: center;"><h4 > <b> LISTAS: </b> <h4></div>
     <br>
     <div class="container" style="text-align: center;" > <ul class="list-group">""")
     for linea in cm:
