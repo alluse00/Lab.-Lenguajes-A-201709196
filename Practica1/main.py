@@ -139,13 +139,13 @@ def Imprimirlo():
             num = ','.join(numeros)
             print(nombre + ": " + num, end="\n")
 def HTML():
-    lol = open('Archivo.html', 'w')
-    inicio = """<html>
+    lol = open('Datos en HTML.html', 'w')
+    start = """<html>
     <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand">
-        <img src="usacIcono.png" width="100" height="100">
+        <img src="Ingusac.png" width="100" height="100">
       </a>
       <a class="navbar-brand">
       <h2><b> Práctica 1 - Lenguajes formales y de programación </b></h2>
@@ -154,14 +154,14 @@ def HTML():
     </nav>
     </head>
     <body>"""
-    lol.write(inicio)
+    lol.write(start)
     datos = """
     <br>
     <br>
     \n"""
     lol.write(datos)
     lol.write("""
-    <div class="container" style="text-align: center;"><h4 > <b> DATOS OPERADOS DEL ARCHIVO SELECCIONADO </b> <h4></div>
+    <div class="container" style="text-align: center;"><h4 > <b> LISTAS HECHAS </b> <h4></div>
     <br>
     <div class="container" style="text-align: center;" > <ul class="list-group">""")
     for linea in cm:
@@ -169,13 +169,12 @@ def HTML():
         o = Ordenar(linea)
         b = Buscar(linea)
         numero = QuitarComa(linea[1])
-        nombreLista = linea[0]
-
+        Lista = linea[0]
         if o is True and b is False:
             print("ORDENADAS")
             num = ','.join(Ascendente(numero))
             lol.write("""<li class="list-group-item">""")
-            lol.write(" LISTA: " + nombreLista + " ORDENADA = " + num + "\n")
+            lol.write(" LISTA: " + Lista + " ORDENADA = " + num + "\n")
             lol.write("</li>")
         elif o is False and b is True:
             print("BUSQUEDAS")
@@ -185,11 +184,11 @@ def HTML():
             if not Vacio(posiciones):
                 pos = ','.join(map(str, posiciones))
                 lol.write("""<li class="list-group-item">""")
-                lol.write(" LISTA: " + nombreLista + " = " + num + " EL NUMERO " + buscado + " SE ENCUENTRA EN LA POSICION = " + pos + "\n")
+                lol.write(" LISTA: " + Lista + " = " + num + " EL NUMERO " + buscado + " SE ENCUENTRA EN LA POSICION = " + pos + "\n")
                 lol.write("</li>")
             else:
                 lol.write("""<li class="list-group-item">""")
-                lol.write(" LISTA: " + nombreLista + " = " + num + " EL NUMERO " + buscado + " NO SE HA ENCONTRADO " + "\n")
+                lol.write(" LISTA: " + Lista + " = " + num + " EL NUMERO " + buscado + " NO SE HA ENCONTRADO " + "\n")
                 lol.write("</li>")
         elif o is True and b is True:
             print("ORDENAR Y BUSCAR")
@@ -199,17 +198,17 @@ def HTML():
             if not Vacio(posiciones):
                 pos = ','.join(map(str, posiciones))
                 lol.write("""<li class="list-group-item">""")
-                lol.write(" LISTA: " + nombreLista + " ORDENADA = " + num + " EL NUMERO " + buscado + " SE ENCUENTRA EN LA POSICION = " + pos + "\n")
+                lol.write(" LISTA: " + Lista + " ORDENADA = " + num + " EL NUMERO " + buscado + " SE ENCUENTRA EN LA POSICION = " + pos + "\n")
                 lol.write("</li>")
             else:
                 lol.write("""<li class="list-group-item">""")
-                lol.write(" LISTA: " + nombreLista + " ORDENADA = " + num + " EL NUMERO " + buscado + " NO SE HA ENCONTRADO " + "\n")
+                lol.write(" LISTA: " + Lista + " ORDENADA = " + num + " EL NUMERO " + buscado + " NO SE HA ENCONTRADO " + "\n")
                 lol.write("</li>")
         else:
             print("NI BUSCAR NI ORDENAR")
             num = ','.join(numero)
             lol.write("""<li class="list-group-item">""")
-            lol.write(nombreLista + ": " + num + "\n")
+            lol.write(Lista + ": " + num + "\n")
             lol.write("</li>")
     lol.write('\n</ul> </div> \n')
     fin = """</body>
@@ -254,4 +253,4 @@ if __name__ == '__main__':
         elif Opcion == 6:
             print("----------FINALIZADO-----------")
         else:
-            print("Escoga una opcion valida")
+            print("Escoga una opción valida")
