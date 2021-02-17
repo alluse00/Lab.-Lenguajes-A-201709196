@@ -163,7 +163,7 @@ def HTML():
     lol.write("""
     <div class="container" style="text-align: center;"><h4 > <b> LISTAS: </b> <h4></div>
     <br>
-    <div class="container" style="text-align: center;" > <ul class="list-group">""")
+    <div class="container" style="text-align: left;" > <ul class="list-group">""")
     for linea in cm:
         lol.write("<br>")
         o = Ordenar(linea)
@@ -173,7 +173,7 @@ def HTML():
         if o is True and b is False:
             print("ORDENADAS")
             num = ','.join(Ascendente(numero))
-            lol.write("""<li class="list-group-item">""")
+            lol.write("""<li >""")
             lol.write(" LISTA: " + Lista + " ORDENADA = " + num + "\n")
             lol.write("</li>")
         elif o is False and b is True:
@@ -183,11 +183,11 @@ def HTML():
             posiciones = Busqueda(numero, buscado)
             if not Vacio(posiciones):
                 pos = ','.join(map(str, posiciones))
-                lol.write("""<li class="list-group-item">""")
+                lol.write("""<li >""")
                 lol.write(" LISTA: " + Lista + " = " + num + " EL NUMERO " + buscado + " SE ENCUENTRA EN LA POSICION = " + pos + "\n")
                 lol.write("</li>")
             else:
-                lol.write("""<li class="list-group-item">""")
+                lol.write("""<li >""")
                 lol.write(" LISTA: " + Lista + " = " + num + " EL NUMERO " + buscado + " NO SE HA ENCONTRADO " + "\n")
                 lol.write("</li>")
         elif o is True and b is True:
@@ -197,17 +197,17 @@ def HTML():
             posiciones = Busqueda(numero, buscado)
             if not Vacio(posiciones):
                 pos = ','.join(map(str, posiciones))
-                lol.write("""<li class="list-group-item">""")
+                lol.write("""<li >""")
                 lol.write(" LISTA: " + Lista + " ORDENADA = " + num + " EL NUMERO " + buscado + " SE ENCUENTRA EN LA POSICION = " + pos + "\n")
                 lol.write("</li>")
             else:
-                lol.write("""<li class="list-group-item">""")
+                lol.write("""<li """)
                 lol.write(" LISTA: " + Lista + " ORDENADA = " + num + " EL NUMERO " + buscado + " NO SE HA ENCONTRADO " + "\n")
                 lol.write("</li>")
         else:
             print("NI BUSCAR NI ORDENAR")
             num = ','.join(numero)
-            lol.write("""<li class="list-group-item">""")
+            lol.write("""<li >""")
             lol.write(Lista + ": " + num + "\n")
             lol.write("</li>")
     lol.write('\n</ul> </div> \n')
